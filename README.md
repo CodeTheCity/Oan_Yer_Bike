@@ -1,4 +1,4 @@
-# Oan_Yer_Bike
+# Oan Yer Bike
 
 ## A cycling infrastructure map for Aberdeen City & Shire
 
@@ -14,3 +14,13 @@ Web URL: https://codethecity.github.io/Oan_Yer_Bike/
 Useful links:
 * OSM API - https://wiki.openstreetmap.org/wiki/API
 * OSM Slippy Map - https://wiki.openstreetmap.org/wiki/Slippy_Map
+
+## Github notes
+
+`git clone git@github.com:CodeTheCity/Oan_Yer_Bike.git`
+
+`git fetch origin`
+
+`git pull`
+
+`git commit -a -m "all fixed"`
