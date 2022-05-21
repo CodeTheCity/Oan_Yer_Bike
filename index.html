@@ -76,7 +76,7 @@
       }
 
       #map { 
-        height: 400px; 
+        height: 600px; 
         width: 100%
       }
     </style>
@@ -100,19 +100,12 @@
   </header>
 
   <main class="px-3">
-    <h1>Oan Yer Bike.</h1>
     <div id="map"></div>
     <script>
       var map = L.map('map').setView([57.145428390778264,-2.0937312622943405], 13);
       var geojsonLayer = new L.GeoJSON.AJAX("mapScripts/bicycleAmenities.geojson");       
       geojsonLayer.addTo(map);
     </script>
-
-
-    <p class="lead">Coming soon.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-    </p>
   </main>
 
   <footer class="mt-auto text-white-50">
