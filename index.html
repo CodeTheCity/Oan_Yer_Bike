@@ -103,8 +103,9 @@
     <h1>Oan Yer Bike.</h1>
     <div id="map"></div>
     <script>
-var geojsonLayer = new L.GeoJSON.AJAX("mapScripts/bicycleAmenities.geojson");       
-geojsonLayer.addTo(map);
+      var map = L.map('map').setView([57.145428390778264,-2.0937312622943405], 13);
+      var geojsonLayer = new L.GeoJSON.AJAX("mapScripts/bicycleAmenities.geojson");       
+      geojsonLayer.addTo(map);
     </script>
 
 
