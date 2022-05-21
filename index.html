@@ -21,6 +21,7 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
     integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
     crossorigin=""></script>
+    <script src="leaflet.ajax.min.js"></script>
 
     <style>
       .bd-placeholder-img {
@@ -89,7 +90,7 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">Oan Yer Bike</h3>
+      <h1 class="float-md-start mb-0">Oan Yer Bike</h1>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="index.html">Map</a>
         <a class="nav-link fw-bold py-1 px-0" href="links.html">Links</a>
@@ -102,18 +103,8 @@
     <h1>Oan Yer Bike.</h1>
     <div id="map"></div>
     <script>
-
-      var map = L.map('map').setView([51.505, -0.09], 13);
-    
-      var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1
-      }).addTo(map);
-    
+var geojsonLayer = new L.GeoJSON.AJAX("mapScripts/bicycleAmenities.geojson");       
+geojsonLayer.addTo(map);
     </script>
 
 
