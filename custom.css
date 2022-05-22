@@ -41,3 +41,31 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+
+.cover-container {
+  padding: 0 !important;
+}
+.cover-container header,
+.cover-container footer{
+  padding: 1rem !important;
+  background-color: #4D5F75;
+}
+.cover-container header{
+  font-size: 1.5em;
+  background-image: url("bike.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  background-size: 90px;
+}
+.cover-container header h1{
+  margin-left: 100px;
+}
+.nav-masthead .nav-link {
+  color: rgb(255, 255, 255);
+}
+.cover-container main{
+  padding: 1rem !important;
+}
+.bg-dark{
+  background-color: #313131;
+}
