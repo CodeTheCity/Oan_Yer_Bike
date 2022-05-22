@@ -45,12 +45,12 @@ L.geoJSON(data, {
       switch(feature.properties.amenity) {
         case "bicycle_parking":
           return L.marker(swapsies(feature.geometry.coordinates), {icon: rackIcon}).addTo(map);
-        case "cycle_barrier":
-          return L.marker(swapsies(feature.geometry.coordinates), {icon: barrierIcon}).addTo(map);
         case "bicycle_repair_station":
           return L.marker(swapsies(feature.geometry.coordinates), {icon: repairIcon}).addTo(map);
         default:
       }
+    } else if (feature.properties && feature.properties.barrier) {
+      return L.marker(swapsies(feature.geometry.coordinates), {icon: barrierIcon}).addTo(map);
     }
   }, 
   onEachFeature: function (feature, layer) {
@@ -59,14 +59,13 @@ L.geoJSON(data, {
         case "bicycle_parking":
           layer.bindPopup("Is covered: " + feature.properties.covered)
           break;
-        case "cycle_barrier":
-          layer.bindPopup("Wheelchair passable: " + feature.properties.wheelchair + " Details: " + feature.properties.description)
-          break;
         case "bicycle_repair_station":
           layer.bindPopup("Colour: " + feature.properties.colour)
           break;
         default:
       }
+    } else if (feature.properties && feature.properties.barrier) {
+      layer.bindPopup("Wheelchair passable: " + feature.properties.wheelchair + " Details: " + feature.properties.description)
     }
   }
 }).addTo(map);
