@@ -7,5 +7,9 @@ var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
   tileSize: 512,
   zoomOffset: -1
 }).addTo(map);
-var geojsonLayer = new L.GeoJSON.AJAX("mapScripts/bicycleAmenities.geojson");       
+var geojsonLayer = new L.GeoJSON.AJAX("mapScripts/bicycleAmenities.geojson", {
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup('<h1>'+feature.properties.f1+'</h1><p>name: '+feature.properties.f2+'</p>');
+    }
+});
 geojsonLayer.addTo(map);
