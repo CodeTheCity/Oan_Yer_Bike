@@ -1,24 +1,26 @@
+const iconSize = 24;
+
 var map = L.map('map').setView([57.145428390778264,-2.0937312622943405], 13);
 // icon definitions
 var rackIcon = L.icon({
   iconUrl: 'icons/rack.png',
-  iconSize: [32, 32],
-  iconAnchor: [16, 16],
-  popupAnchor: [16, 16]
+  iconSize: [iconSize, iconSize],
+  iconAnchor: [iconSize/2, iconSize/2],
+  popupAnchor: [0, 0-(iconSize/2)]
 });
 
 var repairIcon = L.icon({
   iconUrl: 'icons/repair.png',
-  iconSize: [32, 32],
-  iconAnchor: [16, 16],
-  popupAnchor: [16, 16]
+  iconSize: [iconSize, iconSize],
+  iconAnchor: [iconSize/2, iconSize/2],
+  popupAnchor: [0, 0-(iconSize/2)]
 });
 
 var barrierIcon = L.icon({
   iconUrl: 'icons/barrier.png',
-  iconSize: [32, 32],
-  iconAnchor: [16, 16],
-  popupAnchor: [16, 16]
+  iconSize: [iconSize, iconSize],
+  iconAnchor: [iconSize/2, iconSize/2],
+  popupAnchor: [0, 0-(iconSize/2)]
 });
 
 function swapsies(n) {
