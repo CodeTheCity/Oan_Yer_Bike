@@ -43,10 +43,8 @@ L.geoJSON(data, {
       switch(feature.properties.amenity) {
         case "bicycle_parking":
           return L.marker(swapsies(feature.geometry.coordinates), {icon: rackIcon}).addTo(map);
-          break;
         case "cycle_barrier":
           return L.marker(swapsies(feature.geometry.coordinates), {icon: barrierIcon}).addTo(map);
-          break;
         case "bicycle_repair_station":
           return L.marker(swapsies(feature.geometry.coordinates), {icon: repairIcon}).addTo(map);
         default:
@@ -64,6 +62,7 @@ L.geoJSON(data, {
           break;
         case "bicycle_repair_station":
           layer.bindPopup("Colour: " + feature.properties.colour)
+          break;
         default:
       }
     }
