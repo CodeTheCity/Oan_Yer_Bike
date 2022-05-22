@@ -33,21 +33,62 @@ var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
   tileSize: 512,
   zoomOffset: -1
 }).addTo(map);
-var geojsonLayer = new L.GeoJSON.AJAX("mapScripts/bicycleAmenities.geojson", {
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.open("get", "mapScripts/bicycleAmenities.geojson", false)
+xmlHttp.send(null);
+data = JSON.parse(xmlHttp.responseText);
+L.geoJSON(data, {
+  pointToLayer: function (feature, coords) {
+    if (feature.properties && feature.properties.amenity) {
+      switch(feature.properties.amenity) {
+        case "bicycle_parking":
+          return L.marker(swapsies(feature.geometry.coordinates), {icon: rackIcon}).addTo(map);
+          break;
+        case "cycle_barrier":
+          return L.marker(swapsies(feature.geometry.coordinates), {icon: barrierIcon}).addTo(map);
+          break;
+        case "bicycle_repair_station":
+          return L.marker(swapsies(feature.geometry.coordinates), {icon: repairIcon}).addTo(map);
+        default:
+      }
+    }
+  }, 
+  onEachFeature: function (feature, layer) {
+    if (feature.properties && feature.properties.amenity) {
+      switch(feature.properties.amenity) {
+        case "bicycle_parking":
+          layer.bindPopup("Is covered: " + feature.properties.covered)
+          break;
+        case "cycle_barrier":
+          layer.bindPopup("Wheelchair passable: " + feature.properties.wheelchair + " Details: " + feature.properties.description)
+          break;
+        case "bicycle_repair_station":
+          layer.bindPopup("Colour: " + feature.properties.colour)
+        default:
+      }
+    }
+  }
+}).addTo(map);
+
+/*new L.geoJSON.AJAX("mapScripts/bicycleAmenities.geojson", {
   onEachFeature: function (feature, layer) {
     if (feature.properties && feature.properties.amenity) {
       switch(feature.properties.amenity) {
         case "bicycle_parking":
           L.marker(swapsies(feature.geometry.coordinates), {icon: rackIcon}).addTo(map);
+          layer.bindPopup(feature.properties.bicycle_parking + " is covered? " + feature.properties.covered)
           break;
         case "cycle_barrier":
           L.marker(swapsies(feature.geometry.coordinates), {icon: barrierIcon}).addTo(map);
           break;
         case "bicycle_repair_station":
           L.marker(swapsies(feature.geometry.coordinates), {icon: repairIcon}).addTo(map);
+          layer.bindPopup("Fee? " + feature.properties.fee + " Colour? " + feature.properties.colour)
         default:
       }
     }
   }
-});
-//geojsonLayer.addTo(map);
+  style: function (x) {
+    return {color: "red"};
+  }
+}).addTo(map);*/
