@@ -1,8 +1,9 @@
-/*
 An Overpass turbo query, used for pulling bicycle amenities
 in Aberdeen. Returns a JSON file that can be fed back into OpenStreetMaps.
 Tags can be used to filter these points and display them in different ways.
-*/
+
+This can be pasted into https://overpass-turbo.eu/ and the output placed in bicycleAmenities.geojson
+
 [out:json];
 node
   [amenity=bicycle_repair_station]
