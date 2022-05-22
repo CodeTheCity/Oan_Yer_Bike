@@ -10,6 +10,12 @@ Web URL: https://codethecity.github.io/Oan_Yer_Bike/
 - Open data on the subject is distinctly lacking in both City and Shire
 - There is an exhastive map of cycling paths in Aberdeen, however this is in PDF format and the underlying data is not published to the public in any manchine-readable format
 
+### Items added to map
+- Bike parking
+- Cycle barriers
+- Bike repairs
+- Bike shops
+
 
 Useful links:
 * OSM API - https://wiki.openstreetmap.org/wiki/API
