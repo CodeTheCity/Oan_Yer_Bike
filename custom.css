@@ -66,11 +66,14 @@ body {
 .cover-container main{
   padding: 1rem !important;
 }
+.cover-container .main-map{
+  padding: 0 !important;
+}
 .bg-dark{
   background-color: #313131;
 }
 
 .cover-container footer,
 .cover-container footer a {
-  color: #eee;
+  color: #eee !important;
 }
