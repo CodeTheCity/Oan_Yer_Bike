@@ -69,3 +69,8 @@ body {
 .bg-dark{
   background-color: #313131;
 }
+
+.cover-container footer,
+.cover-container footer a {
+  color: #eee;
+}
