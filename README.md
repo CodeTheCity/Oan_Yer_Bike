@@ -13,7 +13,8 @@ Web URL: https://codethecity.github.io/Oan_Yer_Bike/
 
 Useful links:
 * OSM API - https://wiki.openstreetmap.org/wiki/API
-* OSM Slippy Map - https://wiki.openstreetmap.org/wiki/Slippy_Map
+* LeafletJS, map rendering library - https://leafletjs.com/
+* Previous CtC leflet code: https://github.com/CodeTheCity/open_waste_map/blob/main/prototype/index.html
 
 ## Github notes
 

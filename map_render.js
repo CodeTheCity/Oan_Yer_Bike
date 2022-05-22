@@ -69,26 +69,3 @@ L.geoJSON(data, {
     }
   }
 }).addTo(map);
-
-/*new L.geoJSON.AJAX("mapScripts/bicycleAmenities.geojson", {
-  onEachFeature: function (feature, layer) {
-    if (feature.properties && feature.properties.amenity) {
-      switch(feature.properties.amenity) {
-        case "bicycle_parking":
-          L.marker(swapsies(feature.geometry.coordinates), {icon: rackIcon}).addTo(map);
-          layer.bindPopup(feature.properties.bicycle_parking + " is covered? " + feature.properties.covered)
-          break;
-        case "cycle_barrier":
-          L.marker(swapsies(feature.geometry.coordinates), {icon: barrierIcon}).addTo(map);
-          break;
-        case "bicycle_repair_station":
-          L.marker(swapsies(feature.geometry.coordinates), {icon: repairIcon}).addTo(map);
-          layer.bindPopup("Fee? " + feature.properties.fee + " Colour? " + feature.properties.colour)
-        default:
-      }
-    }
-  }
-  style: function (x) {
-    return {color: "red"};
-  }
-}).addTo(map);*/
